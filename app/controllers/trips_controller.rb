@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
 
     before_action :set_trip, only: [:update, :destroy, :show]
+    before_action :authenticated
 
   def index
     render json: Trip.all.order(id: :asc)
@@ -38,7 +39,7 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:name, :country, :length)
+    params.require(:trip).permit(:name, :country, :length, :user_id)
   end
 
 end

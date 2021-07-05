@@ -1,4 +1,4 @@
-class ActivitiesController < ApplicationController
+gitclass ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :update, :destroy]
 
   # GET /activities
